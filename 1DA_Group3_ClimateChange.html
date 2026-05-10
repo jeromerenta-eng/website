@@ -1,0 +1,1986 @@
+<html lang="en">
+    
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Globalization</title>
+  
+    <style>
+    html{
+        scroll-behavior: smooth;
+    }
+    
+    body{
+        font-family: Arial, Helvetica, sans-serif;
+        margin: 0;
+        background-image: url(IMG_0383.PNG);
+        background-size: 100% 100vh;
+        overflow-y: scroll;
+        background-repeat: no-repeat;
+        overflow-x: hidden;
+    }
+    
+    .navbar{
+        z-index: 1000;
+        position: sticky;
+        top: 0;
+        height: 5%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: 20px;
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+        color: white;
+        padding: 15px 30px;
+    
+    
+    }
+    
+    .nav-links{
+        list-style: none;
+        display: flex;
+        gap: 25px;
+        margin: 0;
+        padding-right: 5%;
+        font-size: 200%;
+    
+    }
+    
+    .nav-links a {
+        text-transform: uppercase;
+         color: rgba(0, 64, 0, 0.988);
+         text-decoration: underline;
+         font-weight: bolder;
+         font-size: 70%;
+    }
+    
+    .nav-links a:hover {
+        color: #4ade80;
+    
+    }
+    
+    .logo{
+        margin: 0;
+        padding: 0;
+        color: darkgreen;
+        font-weight: bolder;
+        font-size: 150%;
+    }
+    
+    
+    .navbar2{
+        z-index: 999;
+        display: flex;
+        margin-top: 0;
+        margin-bottom: -105px;
+        width: 100%;
+        height: 10%;
+        animation: scroll-transition;
+        animation-timeline: scroll(y);
+       
+    }
+    
+    @keyframes scroll-transition {
+        to{
+            background-color: darkolivegreen;
+        }
+    }
+    
+    .sticky1{
+        position: sticky;
+        top:7.5%;
+    }
+    
+    .sticky{
+        position: sticky;
+        top: 0;
+    
+    }
+    
+    .box{
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        gap: clamp(28px, 4vw, 72px);
+        margin: 0;
+        padding-top: 2%;
+        padding-left: 6%;
+      
+        font-size: 100%;
+        justify-content: space-between;
+    }
+    
+    .box a {
+         color: rgb(255, 255, 255);
+         text-decoration: none;
+    }
+    .box a:hover {
+        color: wheat;
+        text-decoration: underline;
+    }
+    
+    .wrapper{
+        position: static;
+        width: 100%;
+        height: 50%;
+        display: flex;
+        align-items: center;
+        justify-content:center ;
+    }
+    
+    .container{
+        height: 400px;
+        display: flex;
+        flex-wrap: nowrap;
+        justify-content: start;
+    }
+    
+    .card{
+        width: 80px;
+        border-radius: .75rem;
+        background-size: cover;
+        cursor: pointer;
+        overflow: hidden;
+        border-radius: 2rem;
+        margin: 0 10px;
+        display: flex;
+        align-items: flex-start;
+        transition: .6s cubic-bezier(.28,-0.03,0,.99);
+        box-shadow: 0px 10px 30px -5px rgba(0, 0, 0, 0.8);
+    }
+    
+    .card > .row{
+        color: whitesmoke;
+        display: flex;
+        flex-wrap: nowrap;
+    }
+    
+    .card > .row > {
+        border-radius: 50%;
+        width: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 15px;
+    }
+    .icon{
+        width: 50px;
+        height: 50px;
+        display: flex;
+        background-color: rgb(6, 54, 9);
+        justify-content: center;
+        align-items: center;
+        margin-left: 15px;
+        border-radius: 50%;
+        margin-top: 340px;
+        
+    }
+    
+    .description{
+        border-radius: 20px;
+        padding-left: 5%;
+        display: flex;
+        justify-content: center;
+        flex-direction: column  ;
+        overflow: hidden;
+        width: 450px;
+        margin-top: 50px;
+        margin-bottom: 30px;
+        margin-left: 20px;
+        background: rgba(18, 52, 26, 0.46);
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(10px);
+        box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+       
+      
+    }
+    
+    .card > .row > {
+        display: flex;
+        justify-content: center;
+        position: static;
+        flex-direction: column;
+        overflow: hidden;
+        height: 80px;
+        width: 520px;
+        opacity: 0;
+        transform: translateY(30px);
+        transition-delay: .3s;
+        transition: all .3s ease;
+    }
+     
+    .description p {
+        padding-right: 10%;
+        color: rgba(255, 255, 255, 0.95);
+        padding-bottom: 10%;
+        margin: 0;
+        font-size: 0.95rem;
+        line-height: 1.55;
+        font-weight: bolder;
+        
+    }
+    
+    .description h4{
+        text-transform: uppercase;
+        color: rgb(129, 213, 90);
+        margin: 0 0 10px;
+    }
+    
+    input{
+        display: none;
+    }
+    
+    input:checked + label {
+        width: 600px;
+    }
+    
+    input:checked + label .description{
+        height: auto;
+        max-height: min(380px, 52vh);
+        overflow-y: auto;
+    }
+    
+    
+    
+    .card[for="c1"]{
+        background-image: url(fossil.jpg);
+    }
+    
+    .card[for="c2"]{
+        background-image: url(forest.jpg);
+    }
+    
+    .card[for="c3"]{
+        background-image: url(cement.jpg);
+    }
+    
+    .card[for="c4"]{
+        background-image: url(agri.jpg);
+    }
+    .card[for="c5"]{
+        background-image: url(waste.jpg);
+    }
+    .card[for="c6"]{
+        background-image: url(chemical.jpg);
+    }
+    
+    .classone{
+       display: flex;
+       width: 100%;
+       height: 700px;
+       background-image:url(93bc96679d2b9895cdd1a50ddfe833ea.jpg) ;
+       background-repeat: no-repeat;
+       background-size: cover;
+       align-items: center;
+       justify-content: center;
+    
+    }
+    
+    .definition{
+        
+       position: relative;
+       z-index: 1;
+       position: relative;
+       display: flex;
+       width: 100%;
+       height: 950px;
+       background-image:url(93bc96679d2b9895cdd1a50ddfe833ea.jpg) ;
+       background-repeat: no-repeat;
+       background-size: cover;
+       align-items: center;
+       justify-content: center;
+       text-align: center;
+    }
+    
+    #definition-section{
+        scroll-margin-top: -55px;
+    }
+    
+    
+    .box2{ flex-direction: column;
+        position: relative; 
+        border-radius: 15px; 
+        display: flex; 
+        justify-content: center; 
+        text-align: left;
+        padding-left: 5%; 
+        position: relative; 
+        z-index: 1;
+         margin-top: 10%; 
+         width: 60%; 
+         height: 60%;  
+         background: rgba(10, 28, 14, 0.62);
+         backdrop-filter: blur(12px);
+         -webkit-backdrop-filter: blur(12px);
+         box-shadow: 10px 20px 50px 10px rgba(0, 0, 0, 0.37); 
+    }
+        
+    
+    .definition-content{
+        display: flex;
+       
+        justify-content: flex-start;
+        width: 100%;
+        gap: 40px;
+    }
+    
+    .box3{
+        border-radius: 10px;
+             width: 320px;
+             height: 360px;
+             flex-shrink: 0;
+             background-image: url(93bc96679d2b9895cdd1a50ddfe833ea.jpg) ; 
+             background-size: cover;
+             background-position: center;
+             display: flex;
+             align-items: flex-end;
+             justify-content: center;
+             padding-bottom: 18px;
+             transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+    
+    } 
+    
+    .box3:hover{
+        transform: translateY(-6px) scale(1.02);
+        box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+        filter: brightness(1.05);
+    }
+    
+    .box3-button{
+        display: inline-block;
+        padding: 10px 18px;
+        border-radius: 10px;
+        background-color: rgba(8, 54, 8, 0.88);
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(12px);
+        pointer-events: none;
+        transition: background-color 0.2s ease, transform 0.25s ease, opacity 0.25s ease, visibility 0.25s ease;
+    }
+    
+    .box3-button:hover{
+        background-color: rgba(12, 82, 12, 0.95);
+        transform: translateY(-1px);
+    }
+    
+    .box3:hover .box3-button{
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+        pointer-events: auto;
+    }
+    
+    .definition .box2 .text1{
+        padding-right: 0;
+        padding-bottom: 8px;
+        margin: 0 0 14px;
+        display: inline-block;
+        width: auto;
+        font-size: clamp(0.82rem, 1.5vw, 0.95rem);
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #ecfdf5;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.65);
+        text-align: left;
+    }
+    
+    #box4{
+        display: flex;
+        align-items: flex-start;
+        justify-content: flex-start;
+        width: auto;
+        flex: 1;
+        flex-direction: column;
+        position: relative;
+        text-align: left;
+    }
+    
+    .text2{
+        display: flex;
+        flex-direction: column;
+        line-height: 1.05;
+        color: rgb(255, 255, 255);
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+    
+    .text2-small{
+        font-size: 25px;
+    }
+    
+    .text2-big{
+        color: #15803d;
+        margin: 0 0 20px;
+        font-size: clamp(1.75rem, 4vw, 2.75rem);
+    }
+    
+    .definition-text{
+        margin: 18px 0 0;
+        max-width: 52ch;
+        font-size: clamp(0.95rem, 1.35vw, 1.05rem);
+        font-weight: 500;
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.94);
+        text-align: justify;
+        text-justify: inter-word;
+    }
+    
+    .text3,
+    .effects-kicker,
+    .members-kicker,
+    .references-kicker{
+        display: inline-block;
+        margin: 0 0 14px;
+        padding: 0 6px 8px;
+        font-size: clamp(0.82rem, 1.5vw, 0.95rem);
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #004d33;
+        border-bottom: 2px solid #004d33;
+        box-sizing: border-box;
+    }
+    
+    .causes-title{
+        margin: 0 0 20px;
+        font-size: clamp(1.75rem, 4vw, 2.75rem);
+        font-weight: 800;
+        text-transform: uppercase;
+        color: #0f2918;
+        padding-top: 10px;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+      
+        margin-bottom: 5px;
+    }
+    
+    #causes{
+        padding-top: 6%;
+        padding-bottom: 20%;
+        scroll-margin-top: 75px;
+    }
+    
+    #causes .text3{
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .causes-title{
+        padding-bottom: 15px;
+      
+    }
+    
+    #effects{
+        scroll-margin-top: 75px;
+    }
+    
+    .effects-section{
+        margin-top: -17%;
+        background: #ffffff;
+        color: #142118;
+        padding: clamp(56px, 10vw, 96px) 24px clamp(72px, 12vw, 110px);
+        box-sizing: border-box;
+    }
+    
+    .effects-inner{
+        max-width: 1080px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .effects-title{
+        margin: 0 0 20px;
+        font-size: clamp(1.75rem, 4vw, 2.75rem);
+        font-weight: 800;
+        text-transform: uppercase;
+        color: #0f2918;
+    }
+    
+    .effects-lead{
+        margin: 0 auto 40px;
+        max-width: 150ch;
+        font-size: clamp(1rem, 2vw, 1.125rem);
+        line-height: 1.65;
+        color: #374151;
+    }
+    
+    .effects-grid{
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
+        text-align: left;
+        align-items: stretch;
+    }
+    
+    .effects-flip{
+        position: relative;
+        min-height: 350px;
+    }
+    
+    .effects-flip-label{
+        position: relative;
+        display: block;
+        height: 100%;
+        min-height: 350px;
+        cursor: pointer;
+        outline: none;
+        perspective: 1100px;
+        -webkit-perspective: 1100px;
+    }
+    
+    .effects-flip-input{
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 1px;
+        height: 1px;
+        padding: 0;
+        margin: -1px;
+        overflow: hidden;
+        clip-path: inset(50%);
+        clip: rect(0, 0, 0, 0);
+        white-space: nowrap;
+        border: 0;
+    }
+    
+    .effects-flip-label:focus-within .effects-flip-front{
+        box-shadow: 0 8px 28px rgba(74, 60, 28, 0.08), 0 0 0 3px rgba(21, 128, 61, 0.45);
+    }
+    
+    .effects-flip-inner{
+        display: block;
+        position: relative;
+        width: 100%;
+        min-height: 350px;
+        transform-style: preserve-3d;
+        -webkit-transform-style: preserve-3d;
+        transition: transform 0.65s cubic-bezier(0.4, 0.2, 0.2, 1);
+    }
+    
+    .effects-flip-label .effects-flip-input:checked ~ .effects-flip-inner{
+        transform: rotateY(180deg);
+        -webkit-transform: rotateY(180deg);
+    }
+    
+    .effects-flip-face{
+        position: absolute;
+        inset: 0;
+        padding: 24px 22px 26px;
+        border-radius: 14px;
+        background: #f2ebd1;
+        border: 1px solid rgba(101, 83, 42, 0.14);
+        box-shadow: 0 8px 28px rgba(74, 60, 28, 0.08);
+        backface-visibility: hidden;
+        -webkit-backface-visibility: hidden;
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+    }
+    
+    .effects-flip-front{
+        justify-content: flex-start;
+        align-items: center;
+        transform: rotateY(0deg) translateZ(1px);
+        -webkit-transform: rotateY(0deg) translateZ(1px);
+    }
+    
+    .effects-flip-back{
+        transform: rotateY(180deg) translateZ(1px);
+        -webkit-transform: rotateY(180deg) translateZ(1px);
+        justify-content: flex-start;
+        overflow-y: auto;
+    }
+    
+    .effects-flip-hint{
+        align-self: stretch;
+        width: 100%;
+        text-align: center;
+        margin-top: auto;
+        padding-top: 14px;
+        font-size: 0.72rem;
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: #15803d;
+    }
+    
+    .effects-card-num{
+        text-align: center;
+        align-self: stretch;
+        display: block;
+        margin-bottom: 10px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.14em;
+        color: #15803d;
+    }
+    
+    .effects-card-img{
+        display: block;
+        align-self: center;
+        width: 30%;
+       
+        height: 50%;
+        margin: 0 auto 12px;
+        border-radius: 10px;
+        object-fit: cover;
+        object-position: center;
+        flex-shrink: 0;
+        pointer-events: none;
+      
+    }
+    
+    .effects-card-title{
+        align-self: stretch;
+        width: 100%;
+        text-align: center;
+        margin: 0;
+        font-size: clamp(0.85rem, 1.65vw, 1.05rem);
+        font-weight: 700;
+        line-height: 1.3;
+        color: #0f2918;
+    }
+    
+    .effects-card-text{
+        text-align: center;
+        margin: 0;
+        font-size: 120%;
+        line-height: 1.55;
+        color: #4b5563;
+    }
+    
+    .effects-card-text > p{
+        margin: 0 0 14px;
+    }
+    
+    .effects-card-text > p:last-child{
+        margin-bottom: 0;
+    }
+    
+    .effects-card-keydetail{
+        margin-top: 4px;
+        padding-top: 14px;
+        border-top: 1px solid rgba(101, 83, 42, 0.22);
+        font-size: 100%;
+        line-height: 1.55;
+        color: #374151;
+    }
+    
+    @media (prefers-reduced-motion: reduce){
+        .effects-flip-inner{
+            transition-duration: 0.01ms;
+        }
+    }
+    
+    @media (max-width: 720px){
+        .effects-grid{
+            grid-template-columns: 1fr;
+        }
+    }
+    
+    #genz-action{
+        scroll-margin-top: 75px;
+    }
+    
+    .genz-action{
+        width: 100%;
+        min-height: 700px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        padding: 90px 24px;
+        
+    
+        background-color: rgb(18, 44, 18);
+    
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    
+    .genz-kicker{
+        display: inline-block;
+        margin: 0 0 14px;
+        padding: 0 6px 8px;
+        font-size: clamp(0.82rem, 1.5vw, 0.95rem);
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #ecfdf5;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.55);
+        box-sizing: border-box;
+    }
+    
+    .genz-header{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        gap: 18px;
+        width: min(1200px, 100%);
+        flex-direction: column;
+    }
+    
+    .genz-title{
+        margin: 0;
+        font-size: 30px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: whitesmoke;
+        text-align: center;
+       
+    }
+    
+    .genz-lede{
+        margin: 0;
+        padding-bottom: 1%;
+        color: rgba(255, 255, 255, 0.86);
+        font-size: 15px;
+        line-height: 1.55;
+        text-align: center;
+        flex: 0 1 auto;
+        max-width: 100ch;
+    }
+    
+    .genz-grid{
+        display: flex;
+        gap: 16px;
+        margin-top: 18px;
+        align-items: stretch;
+        flex-wrap: nowrap;
+        justify-content: center;
+        width: min(1200px, 100%);
+    }
+    
+    .genz-card{
+        flex: 0 0 215px;
+        border-radius: 14px;
+        padding: 18px 18px;
+        background: rgb(240, 229, 199);
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        box-shadow: 0 10px 22px rgba(0, 0, 0, 0.22);
+        transition: transform 0.25s ease, box-shadow 0.25s ease, background 0.25s ease;
+    }
+    
+    .genz-card:hover{
+        transform: translateY(-10px);
+        box-shadow: 0 16px 30px rgba(0, 0, 0, 0.35);
+    }
+    
+    .genz-card-icon{
+        padding-left: 10%;
+        display: flex;
+        justify-content: center;
+        align-content: center;
+        border-radius: 70%;
+        width: 80%;
+        height: 30%;
+    
+    }
+    
+    .genz-card h3{
+        color: rgb(33, 92, 33);
+        margin: 0 0 6px;
+        font-size: 22px;
+        letter-spacing: 0.4px;
+    }
+    
+    .genz-meta{
+        margin: 10px 0 0;
+        padding-left: 18px;
+        color: rgba(0, 0, 0, 0.9);
+        line-height: 1.55;
+    }
+    
+    .genz-meta li{
+        margin: 6px 0;
+    }
+    
+    .genz-meta strong{
+        color: rgba(0, 0, 0, 0.98);
+    }
+    
+    .genz-actions{
+        display: flex;
+        gap: 12px;
+        margin-top: 24px;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: min(1200px, 100%);
+    }
+    
+    .genz-btn{
+        display: inline-block;
+        padding: 10px 16px;
+        border-radius: 12px;
+        background-color: rgba(8, 54, 8, 0.88);
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 700;
+        letter-spacing: 0.3px;
+        transition: transform 0.2s ease, background-color 0.2s ease;
+    }
+    
+    .genz-btn:hover{
+        background-color: rgba(12, 82, 12, 0.95);
+        transform: translateY(-1px);
+    }
+    
+    .genz-btn--ghost{
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+    }
+    
+    .genz-btn--ghost:hover{
+        background: rgba(255, 255, 255, 0.18);
+    }
+    
+    #slogan{
+        scroll-margin-top: 150px;
+    }
+    
+    .slogan-section{
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(155deg, #052e14 0%, #0f4d28 38%, #0a2412 72%, #061a0d 100%);
+        color: #f0fdf4;
+        padding: clamp(64px, 11vw, 110px) 24px clamp(72px, 12vw, 120px);
+        box-sizing: border-box;
+    }
+    
+    .slogan-glow{
+        pointer-events: none;
+        position: absolute;
+        inset: -40% -20% auto -20%;
+        height: 85%;
+        background:
+            radial-gradient(ellipse 55% 45% at 18% 35%, rgba(74, 222, 128, 0.22) 0%, transparent 55%),
+            radial-gradient(ellipse 50% 40% at 88% 55%, rgba(34, 197, 94, 0.14) 0%, transparent 50%),
+            radial-gradient(ellipse 40% 35% at 50% 100%, rgba(187, 247, 208, 0.08) 0%, transparent 45%);
+    }
+    
+    .slogan-inner{
+        position: relative;
+        z-index: 1;
+        max-width: min(820px, 100%);
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .slogan-kicker{
+        display: inline-block;
+        margin: 0 0 18px;
+        padding: 0 6px 8px;
+        font-size: clamp(0.82rem, 1.5vw, 0.95rem);
+        font-weight: 800;
+        letter-spacing: 0.18em;
+        text-transform: uppercase;
+        color: #ecfdf5;
+        background: transparent;
+        border: none;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.45);
+        border-radius: 0;
+        text-decoration: none;
+        box-sizing: border-box;
+    }
+    
+    .slogan-title{
+        margin: 0 auto 32px;
+        max-width: min(100%, 38rem);
+        font-size: clamp(1.35rem, 3.8vw, 2.05rem);
+        font-weight: 800;
+        line-height: 1.28;
+        letter-spacing: 0.02em;
+        text-wrap: balance;
+    }
+    
+    .slogan-title-accent{
+        display: block;
+        background: linear-gradient(105deg, #ffffff 0%, #bbf7d0 45%, #4ade80 100%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+        text-shadow: 0 2px 40px rgba(74, 222, 128, 0.15);
+    }
+    
+    .slogan-title-rest{
+        display: block;
+        margin-top: 6px;
+        font-size: 0.72em;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: rgba(240, 253, 244, 0.88);
+    }
+    
+    .slogan-card{
+        text-align: left;
+        padding: clamp(22px, 4vw, 34px) clamp(22px, 4vw, 38px);
+        border-radius: 20px;
+        background: linear-gradient(145deg, rgba(255, 255, 255, 0.11) 0%, rgba(255, 255, 255, 0.04) 100%);
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        box-shadow:
+            0 4px 24px rgba(0, 0, 0, 0.2),
+            0 1px 0 rgba(255, 255, 255, 0.06) inset;
+        backdrop-filter: blur(14px);
+        -webkit-backdrop-filter: blur(14px);
+    }
+    
+    .slogan-quote{
+        position: relative;
+        margin: 0 0 26px;
+        padding: 8px 0 8px 22px;
+        border: none;
+        border-left: 4px solid #4ade80;
+    }
+    
+    .slogan-quote::before{
+        content: "“";
+        position: absolute;
+        left: 6px;
+        top: -8px;
+        font-family: Georgia, "Times New Roman", serif;
+        font-size: 3.2rem;
+        line-height: 1;
+        color: rgba(74, 222, 128, 0.35);
+        pointer-events: none;
+    }
+    
+    .slogan-quote p{
+        margin: 0;
+        padding-top: 4px;
+        font-size: clamp(1.02rem, 2.2vw, 1.2rem);
+        line-height: 1.78;
+        font-style: italic;
+        font-weight: 500;
+        color: rgba(248, 250, 252, 0.96);
+    }
+    
+    .slogan-tags{
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 12px;
+        justify-content: center;
+        margin: 0;
+        padding-top: 4px;
+    }
+    
+    .slogan-tag{
+        display: inline-block;
+        padding: 8px 14px;
+        font-size: clamp(0.75rem, 1.6vw, 0.86rem);
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        color: #ecfdf5;
+        background: rgba(21, 128, 61, 0.45);
+        border: 1px solid rgba(134, 239, 172, 0.35);
+        border-radius: 999px;
+        transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .slogan-tag:hover{
+        transform: translateY(-2px);
+        background: rgba(34, 197, 94, 0.55);
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+    }
+    
+    #group-members{
+        scroll-margin-top: 75px;
+    }
+    
+    #references{
+        scroll-margin-top: 75px;
+    }
+    
+    .references-section{
+       
+        color: #142118;
+        padding: clamp(56px, 10vw, 96px) 24px clamp(72px, 12vw, 110px);
+        box-sizing: border-box;
+    }
+    
+    .references-inner{
+        background: rgba(218, 229, 171, 0.62);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        padding: 20px;
+        border-radius: 10px;
+        max-width: min(1300px, 150%);
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .references-title{
+        margin: 0 0 28px;
+        font-size: clamp(1.5rem, 3.5vw, 2.1rem);
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: #0a1f14;
+    }
+    
+    .references-list{
+        margin: 0;
+        padding: 0 0 0 1.35rem;
+        text-align: left;
+        list-style: decimal;
+        font-size: clamp(0.9rem, 1.65vw, 1rem);
+        line-height: 1.65;
+        color: #374151;
+    }
+    
+    .references-item{
+        margin: 0 0 1.15rem;
+        padding-left: 0.35rem;
+    }
+    
+    .references-item:last-child{
+        margin-bottom: 0;
+    }
+    
+    .references-item em{
+        font-style: italic;
+    }
+    
+    .references-item a{
+        color: #15803d;
+        font-weight: 600;
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        word-break: break-all;
+    }
+    
+    .references-item a:hover{
+        color: #166534;
+        text-decoration-thickness: 2px;
+    }
+    
+    .science-close{
+        background: #eef3f1;
+        border-top: 1px solid rgba(22, 101, 52, 0.12);
+        padding: clamp(28px, 5vw, 44px) 20px clamp(32px, 6vw, 52px);
+        box-sizing: border-box;
+    }
+    
+    .science-close-inner{
+        max-width: min(560px, 100%);
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .science-close-text{
+        margin: 0 0 14px;
+        font-size: clamp(0.72rem, 1.55vw, 0.82rem);
+        line-height: 1.65;
+        font-weight: 500;
+        color: #4b5563;
+    }
+    
+    .science-close-tags{
+        margin: 0;
+        font-size: clamp(0.68rem, 1.45vw, 0.76rem);
+        font-weight: 700;
+        letter-spacing: 0.04em;
+        line-height: 1.55;
+        color: #15803d;
+    }
+    
+    .members-section{
+       
+        color: #142118;
+        padding: clamp(56px, 10vw, 96px) 24px clamp(72px, 12vw, 110px);
+        box-sizing: border-box;
+    }
+    
+    .members-inner{
+        max-width: min(1200px, 100%);
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .members-title{
+        margin: 0 0 14px;
+        font-size: clamp(1.65rem, 3.8vw, 2.4rem);
+        font-weight: 800;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: #0a1f14;
+    }
+    
+    .members-lead{
+        margin: 0 auto 36px;
+        max-width: 52ch;
+        font-size: clamp(0.95rem, 2vw, 1.05rem);
+        line-height: 1.6;
+        color: #4b5563;
+    }
+    
+    .members-grid{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: center;
+        align-items: stretch;
+        gap: clamp(12px, 2vw, 20px);
+        text-align: center;
+    }
+    
+    .member-card{
+        flex: 1 1 0;
+        min-width: 0;
+        max-width: 220px;
+        padding: 22px 14px 24px;
+        border-radius: 14px;
+        background: #fdfffdfd;
+        border: 1px solid rgba(22, 101, 52, 0.12);
+        box-shadow: 0 5px 20px rgba(15, 41, 24, 0.589);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+    
+    .member-card:hover{
+        transform: translateY(-3px);
+        box-shadow: 0 14px 34px rgba(15, 41, 24, 0.09);
+    }
+    
+    .member-photo{
+        display: block;
+        width: 96px;
+        height: 96px;
+        margin: 0 auto 14px;
+        border-radius: 50%;
+        object-fit: cover;
+        object-position: center top;
+        border: 3px solid rgba(21, 128, 61, 0.25);
+        background: linear-gradient(145deg, #cbdcc8 0%, #e8f0e6 100%);
+    }
+    
+    .member-name{
+        margin: 0 0 6px;
+        font-size: 1.08rem;
+        font-weight: 700;
+        color: #0f2918;
+    }
+    
+    .member-meta{
+        margin: 0;
+        font-size: 0.88rem;
+        line-height: 1.45;
+        color: #15803d;
+    }
+    
+    @media (max-width: 900px){
+        .members-grid{
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .member-card{
+            flex: 1 1 calc(33.333% - 16px);
+            max-width: none;
+            min-width: 140px;
+        }
+    }
+    
+    @media (max-width: 560px){
+        .members-grid{
+            flex-direction: row;
+            flex-wrap: wrap;
+        }
+        .member-card{
+            flex: 1 1 calc(50% - 12px);
+            min-width: 130px;
+        }
+    }
+    
+    @media (max-width: 380px){
+        .members-grid{
+            flex-direction: column;
+            align-items: center;
+        }
+        .member-card{
+            flex: 1 1 auto;
+            width: 100%;
+            max-width: 280px;
+        }
+    }
+    
+    #home{
+        scroll-margin-top: 90px;
+    }
+    
+    .home-section{
+        position: relative;
+        min-height: calc(100vh - 70px);
+        box-sizing: border-box;
+        padding: clamp(72px, 12vh, 120px) 8% clamp(100px, 14vh, 140px);
+        width: 100%;
+    }
+    
+    .home-inner{
+        position: relative;
+        width: 100%;
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    
+    .home-main{
+        max-width: min(560px, 100%);
+        padding-top: 14%;
+    }
+    
+    .home-cta{
+        position: absolute;
+        bottom: clamp(72px, 11vh, 120px);
+        right: 20%;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 14px 26px;
+        border-radius: 999px;
+        background: linear-gradient(135deg, #15803d 0%, #166534 100%);
+        color: #ffffff;
+        font-size: clamp(0.95rem, 2vw, 1.05rem);
+        font-weight: 700;
+        text-decoration: none;
+        letter-spacing: 0.03em;
+        box-shadow: 0 10px 28px rgba(0, 0, 0, 0.35);
+        transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
+        z-index: 2;
+    }
+    
+    .home-cta:hover{
+        transform: translateY(-2px);
+        filter: brightness(1.06);
+        box-shadow: 0 14px 34px rgba(0, 0, 0, 0.4);
+    }
+    
+    .home-cta-arrow{
+        font-size: 1.15em;
+        line-height: 1;
+    }
+    
+    @media (max-width: 900px){
+        .home-cta{
+            bottom: clamp(56px, 10vh, 96px);
+            right: 11%;
+        }
+    }
+    
+    .home-hashtag-row{
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 12px;
+    }
+    
+    .home-hashtag{
+        font-size: clamp(1.05rem, 2.4vw, 1.35rem);
+        font-weight: 800;
+        letter-spacing: 0.02em;
+        color: #4ade80;
+        text-shadow: 0 2px 18px rgba(0, 0, 0, 0.35);
+    }
+    
+    .home-leaf-mark{
+        flex-shrink: 0;
+        color: #4ade80;
+        filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.25));
+    }
+    
+    .home-title{
+        margin: 0 0 14px;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .home-title-line{
+        display: block;
+        font-size: clamp(1.85rem, 5vw, 3rem);
+        font-weight: 800;
+        line-height: 1.1;
+        letter-spacing: 0.02em;
+    }
+    
+    .home-title-line--white{
+        color: #ffffff;
+        text-shadow: 0 2px 24px rgba(0, 0, 0, 0.45);
+    }
+    
+    .home-title-line--green{
+        color: #4ade80;
+        text-shadow: 0 2px 24px rgba(0, 0, 0, 0.35);
+    }
+    
+    .home-kicker{
+        margin: 0 0 22px;
+        font-size: clamp(0.85rem, 1.8vw, 1rem);
+        font-weight: 500;
+        letter-spacing: 0.06em;
+        color: rgba(255, 255, 255, 0.92);
+        text-shadow: 0 1px 12px rgba(0, 0, 0, 0.4);
+    }
+    
+    .home-desc-card{
+        display: flex;
+        gap: 16px;
+        align-items: flex-start;
+        padding: 18px 20px;
+        border-radius: 16px;
+        background: rgba(10, 28, 14, 0.62);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+    }
+    
+    .home-desc-icon{
+        flex-shrink: 0;
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: 2px solid #4ade80;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(74, 222, 128, 0.08);
+        color: #4ade80;
+    }
+    
+    .home-desc-leaf{
+        display: block;
+    }
+    
+    .home-desc-text{
+        margin: 0;
+        font-size: clamp(0.88rem, 1.65vw, 1rem);
+        line-height: 1.65;
+        color: rgba(255, 255, 255, 0.94);
+    }
+    
+    .home-cc{
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        color: #4ade80;
+    }
+
+    @media (max-width: 1200px){
+        .nav-links{
+            gap: 14px;
+            font-size: 130%;
+            padding-right: 4%;
+        }
+    
+        .box{
+            gap: clamp(14px, 2.3vw, 26px);
+            padding-left: 4%;
+            font-size: 0.95rem;
+        }
+    
+        .definition{
+            height: auto;
+            min-height: 100vh;
+            padding: 120px 24px 70px;
+            box-sizing: border-box;
+        }
+    
+        .box2{
+            width: min(920px, 92%);
+            height: auto;
+            margin-top: 0;
+            padding: 26px 22px;
+        }
+    
+        .definition-content{
+            gap: 24px;
+        }
+    
+        .box3{
+            width: min(320px, 42vw);
+            height: 320px;
+        }
+    
+        .container{
+            width: 100%;
+            height: auto;
+            justify-content: center;
+        }
+    }
+    
+    @media (max-width: 900px){
+        .navbar{
+            padding: 12px 16px;
+        }
+    
+        .logo{
+            font-size: 1rem;
+        }
+    
+        .nav-links{
+            gap: 10px;
+            font-size: 95%;
+            padding-right: 0;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+    
+        .sticky1{
+            top: 62px;
+        }
+    
+        .box{
+            justify-content: center;
+            padding: 10px 12px 0;
+            gap: 10px 14px;
+            font-size: 0.82rem;
+        }
+    
+        .classone{
+            height: auto;
+            min-height: 82vh;
+            padding: 80px 20px 50px;
+            box-sizing: border-box;
+        }
+    
+        .definition-content{
+            flex-direction: column;
+            align-items: center;
+        }
+    
+        .box3{
+            width: min(360px, 100%);
+            height: 260px;
+        }
+    
+        #box4{
+            width: 100%;
+        }
+    
+        .wrapper{
+            overflow-x: auto;
+            justify-content: flex-start;
+            padding: 0 12px 8px;
+            box-sizing: border-box;
+        }
+    
+        .container{
+            min-width: 760px;
+        }
+    
+        .effects-section{
+            margin-top: 0;
+        }
+    
+        .genz-grid{
+            flex-wrap: wrap;
+        }
+    
+        .genz-card{
+            flex: 1 1 calc(50% - 16px);
+            min-width: 230px;
+        }
+    
+        .home-main{
+            max-width: min(640px, 100%);
+            padding-top: 8%;
+        }
+    
+        .home-cta{
+            position: static;
+            margin-top: 20px;
+        }
+    }
+    
+    @media (max-width: 640px){
+        .definition{
+            min-height: 0;
+            padding: 90px 14px 42px;
+        }
+    
+        .box2{
+            width: 100%;
+            padding: 20px 14px;
+        }
+    
+        .text2-small{
+            font-size: clamp(1rem, 4.8vw, 1.25rem);
+        }
+    
+        .definition-text{
+            max-width: 100%;
+        }
+    
+        .container{
+            min-width: 640px;
+        }
+    
+        .genz-card{
+            flex: 1 1 100%;
+            min-width: 0;
+        }
+    
+        .home-section{
+            padding: 72px 14px 80px;
+        }
+    
+        .home-desc-card{
+            padding: 14px;
+        }
+    }
+</style>
+    
+    
+</head>
+
+        
+<body>
+    
+    <nav class="navbar sticky">
+        <div class="logo">The GreenShift</div>
+        <ul class="nav-links">
+            <li><a href="#home">home</a></li>
+           
+        </ul>
+    </nav>
+
+<section id="home" class="home-section" aria-label="Home">
+    <div class="home-inner">
+        <div class="home-main">
+            <div class="home-hashtag-row">
+                <span class="home-hashtag">#GreenShift:</span>
+                <svg class="home-leaf-mark" width="26" height="20" viewBox="0 0 26 20" aria-hidden="true">
+                    <path fill="currentColor" d="M13 1s-5 4.5-5 10c0 3 2 5 5 5s5-2 5-5c0-5.5-5-10-5-10z"/>
+                    <path fill="currentColor" d="M5 9s3 6 8 8c-4-3-6-7-8-8z"/>
+                    <path fill="currentColor" d="M21 9s-3 6-8 8c4-3 6-7 8-8z"/>
+                </svg>
+            </div>
+            <h1 class="home-title">
+                <span class="home-title-line home-title-line--white">Gen Z Rising for</span>
+                <span class="home-title-line home-title-line--green">Climate Action</span>
+            </h1>
+            <p class="home-kicker">digital generation · eco-driven · change-makers</p>
+            <div class="home-desc-card">
+                <div class="home-desc-icon" aria-hidden="true">
+                    <svg class="home-desc-leaf" width="28" height="28" viewBox="0 0 28 28">
+                        <path fill="currentColor" d="M14 4s-6 5-6 12c0 4 2.5 7 6 7s6-3 6-7c0-7-6-12-6-12z"/>
+                        <path fill="currentColor" d="M6 14s4 7 10 9c-5-4-8-9-10-9z"/>
+                        <path fill="currentColor" d="M22 14s-4 7-10 9c5-4 8-9 10-9z"/>
+                    </svg>
+                </div>
+                <p class="home-desc-text">
+                    We are Gen Z voices informed, empowered, and ready to turn awareness into action. This campaign focuses on the urgent reality of <span class="home-cc">CLIMATE CHANGE</span>, from hotter cities and stronger typhoons to environmental damage threatening people, wildlife, and future generations.
+                </p>
+            </div>
+        </div>
+    </div>
+    <a href="#definition-section" class="home-cta">Join the Movement <span class="home-cta-arrow" aria-hidden="true">→</span></a>
+</section>
+
+<div class="navbar2 sticky1">
+    <div class="box">
+        <li><a href="#definition-section">01.Definition and Connection</a></li>
+        <li><a href="#causes">02.Causes</a></li>
+        <li><a href="#effects">03.Effects</a></li>
+        <li><a href="#genz-action">04.Gen Z Action</a></li>
+        <li><a href="#slogan">05.Slogan</a></li>
+        <li><a href="#group-members">06.Members</a></li>
+        <li><a href="#references">07.References</a></li>
+     
+     </div>       
+</div>
+
+<section>
+    <div class="definition" id="definition-section">
+        <div class="box2">
+             
+        <div class="text1">01.Definition and Connection to Globalization</div>
+        <div class="definition-content">
+            <div class="box3">
+                <a href="#causes" class="box3-button">Causes of Climate Change</a>
+            </div>
+            <div id="box4">
+                <div class="text2">
+                    <span class="text2-small">What is</span>
+                    <span class="text2-big">Climate Change?</span>
+                </div>
+                <p class="definition-text">Climate change refers to long-term changes in temperature and weather patterns caused mainly by human activities such as burning fossil fuels and deforestation. It is connected to globalization because globalization increases trade, transportation, factory production, and the movement of goods between countries. These activities require more fuel and energy, which release greenhouse gases into the atmosphere and contribute to global warming.</p>
+            </div>
+        </div>
+    </div>
+        </div>  
+    
+</section>
+
+
+
+<section id="causes">
+    <h2 class="causes-title">Causes of <br>Climate Change</h2>
+    <div class="text3">02.Causes</div>
+    <div class="wrapper">
+        <div class="container">
+            <input type="radio" name="slide" id="c1" checked >
+            <label for="c1" class="card">
+                <div class="row">
+                    <div class="icon">1</div>
+                    <div class="description">
+                        <h4>Burning Fossil Fuels</h4>
+                        <p>The largest contributor to climate change is the burning of fossil fuels such as coal, oil, and natural gas. This process releases carbon dioxide (CO<sub>2</sub>) and nitrous oxide, which trap heat in the atmosphere, leading to global warming. Electricity generation, transportation, and heating are major sources of these emissions, accounting for nearly 68% of global greenhouse gas emissions.</p>
+                    </div>
+                </div>
+            </label>
+               <input type="radio" name="slide" id="c2" >
+            <label for="c2" class="card">
+                <div class="row">
+                    <div class="icon">2</div>
+                    <div class="description">
+                        <h4>Deforestation and Land Use Changes</h4>
+                        <p>Cutting down forests for agriculture, urban development, or logging reduces the planet’s ability to absorb CO<sub>2</sub>. Trees act as carbon sinks, and their removal increases atmospheric CO<sub>2</sub> levels. Land use changes also release greenhouse gases from soil and vegetation.</p>
+                    </div>
+                </div>
+            </label>
+               <input type="radio" name="slide" id="c3" >
+            <label for="c3" class="card">
+                <div class="row">
+                    <div class="icon">3</div>
+                    <div class="description">
+                        <h4>Industrial Processes</h4>
+                        <p>Manufacturing and industry contribute significantly to climate change. Cement production, steelmaking, and chemical manufacturing release CO<sub>2</sub> and other greenhouse gases. Industrial activities also emit chlorofluorocarbons (CFCs) and other synthetic gases that trap heat.</p>
+                    </div>
+                </div>
+            </label>
+               <input type="radio" name="slide" id="c4" >
+            <label for="c4" class="card">
+                <div class="row">
+                    <div class="icon">4</div>
+                    <div class="description">
+                        <h4>Agriculture and Livestock</h4>
+                        <p>Agricultural practices release methane (CH<sub>4</sub>) and nitrous oxide (N<sub>2</sub>O). Livestock produce methane during digestion, while fertilizers and manure release nitrous oxide. Rice paddies and other wetland farming also contribute to methane emissions.</p>
+                    </div>
+                </div>
+            </label>
+              <input type="radio" name="slide" id="c5" >
+            <label for="c5" class="card">
+                <div class="row">
+                    <div class="icon">5</div>
+                    <div class="description">
+                        <h4>Waste Management</h4>
+                        <p>Landfills and improper waste disposal generate methane as organic waste decomposes. Food waste is a major contributor, with discarded food in landfills releasing potent greenhouse gases that are about 25 times more effective at trapping heat than CO<sub>2</sub>.</p>
+                    </div>
+                </div>
+            </label>
+             <input type="radio" name="slide" id="c6" >
+            <label for="c6" class="card">
+                <div class="row">
+                    <div class="icon">6</div>
+                    <div class="description">
+                        <h4>Use of Refrigerants and Industrial Chemicals</h4>
+                        <p>Certain chemicals used in refrigeration, air conditioning, and industrial processes, such as hydrofluorocarbons (HFCs), have extremely high global warming potential. Even small leaks can significantly contribute to climate change.</p>
+                    </div>
+                </div>
+            </label>
+        </div>
+    </div> 
+    </section>  
+
+<section id="effects" class="effects-section">
+    <div class="effects-inner">
+        <div class="effects-kicker">03.Effects</div>
+        <h2 class="effects-title">Effects of Climate Change</h2>
+        <p class="effects-lead">
+            Climate change causes many harmful effects on people and the environment. These include stronger typhoons and storms, rising sea levels, droughts, floods, extreme heat, melting glaciers, loss of biodiversity, and food shortages. It also affects human health by increasing heat-related illnesses and spreading diseases
+        </p>
+        <div class="effects-grid">
+            <div class="effects-flip">
+                <label class="effects-flip-label">
+                    <input type="checkbox" class="effects-flip-input">
+                    <span class="effects-flip-inner">
+                        <span class="effects-flip-face effects-flip-front">
+                            <span class="effects-card-num">01</span>
+                            <img class="effects-card-img" src="effects1.png" alt="Global warming and greenhouse effect">
+                            <h3 class="effects-card-title">Global Warming &amp; The Greenhouse Effect</h3>
+                            <span class="effects-flip-hint">Click to flip</span>
+                        </span>
+                        <span class="effects-flip-face effects-flip-back">
+                            <div class="effects-card-text">
+                                <p>Increased concentrations of gases like CO<sub>2</sub> act as a blanket, trapping heat in the atmosphere. This has led to the last decade being the warmest on record, causing polar ice melt and rapid sea-level rise.</p>
+                                <p class="effects-card-keydetail"><strong>Key Detail:</strong> Global surface temperatures have risen by roughly 1.1°C since the pre-industrial era, with the Arctic warming nearly four times faster than the global average.</p>
+                            </div>
+                        </span>
+                    </span>
+                </label>
+            </div>
+            <div class="effects-flip">
+                <label class="effects-flip-label">
+                    <input type="checkbox" class="effects-flip-input">
+                    <span class="effects-flip-inner">
+                        <span class="effects-flip-face effects-flip-front">
+                            <span class="effects-card-num">02</span>
+                            <img class="effects-card-img" src="effects2.png" alt="Loss of biodiversity">
+                            <h3 class="effects-card-title">Loss of Biodiversity</h3>
+                            <span class="effects-flip-hint">Click to flip</span>
+                        </span>
+                        <span class="effects-flip-face effects-flip-back">
+                            <div class="effects-card-text">
+                                <p>Climate change is a leading driver of the “Sixth Mass Extinction.” Shifting climate zones force species to migrate; those that cannot move fast enough or find suitable habitats face extinction.</p>
+                                <p class="effects-card-keydetail"><strong>Key Detail:</strong> Approximately 1 million species are currently at risk of extinction, many within decades, due to habitat loss and temperature extremes.</p>
+                            </div>
+                        </span>
+                    </span>
+                </label>
+            </div>
+            <div class="effects-flip">
+                <label class="effects-flip-label">
+                    <input type="checkbox" class="effects-flip-input">
+                    <span class="effects-flip-inner">
+                        <span class="effects-flip-face effects-flip-front">
+                            <span class="effects-card-num">03</span>
+                            <img class="effects-card-img" src="effects3.png" alt="Air pollution and respiratory health">
+                            <h3 class="effects-card-title">Air Pollution &amp; Respiratory Health</h3>
+                            <span class="effects-flip-hint">Click to flip</span>
+                        </span>
+                        <span class="effects-flip-face effects-flip-back">
+                            <div class="effects-card-text">
+                                <p>Rising temperatures increase the formation of ground-level ozone (smog). Additionally, more frequent wildfires (fueled by drought) release massive amounts of particulate matter (PM<sub>2.5</sub>) into the air.</p>
+                                <p class="effects-card-keydetail"><strong>Key Detail:</strong> Air pollution is now linked to approximately 7 million premature deaths annually worldwide.</p>
+                            </div>
+                        </span>
+                    </span>
+                </label>
+            </div>
+            <div class="effects-flip">
+                <label class="effects-flip-label">
+                    <input type="checkbox" class="effects-flip-input">
+                    <span class="effects-flip-inner">
+                        <span class="effects-flip-face effects-flip-front">
+                            <span class="effects-card-num">04</span>
+                            <img class="effects-card-img" src="effects4.png" alt="Methane and high-intensity emissions">
+                            <h3 class="effects-card-title">Methane &amp; High-Intensity Emissions</h3>
+                            <span class="effects-flip-hint">Click to flip</span>
+                        </span>
+                        <span class="effects-flip-face effects-flip-back">
+                            <div class="effects-card-text">
+                                <p>Methane (CH<sub>4</sub>) is a potent greenhouse gas with a global warming potential over 80 times higher than CO<sub>2</sub> over a 20-year period. It leaks from landfills, oil/gas wells, and livestock.</p>
+                                <p class="effects-card-keydetail"><strong>Key Detail:</strong> Reducing methane is considered the “fastest” way to slow warming in the short term because it breaks down in the atmosphere much quicker than CO<sub>2</sub>.</p>
+                            </div>
+                        </span>
+                    </span>
+                </label>
+            </div>
+            <div class="effects-flip">
+                <label class="effects-flip-label">
+                    <input type="checkbox" class="effects-flip-input">
+                    <span class="effects-flip-inner">
+                        <span class="effects-flip-face effects-flip-front">
+                            <span class="effects-card-num">05</span>
+                            <img class="effects-card-img" src="effects5.png" alt="Water and soil contamination">
+                            <h3 class="effects-card-title">Water and Soil Contamination</h3>
+                            <span class="effects-flip-hint">Click to flip</span>
+                        </span>
+                        <span class="effects-flip-face effects-flip-back">
+                            <div class="effects-card-text">
+                                <p>Extreme weather causes “flash flooding” that carries pesticides, plastics, and industrial waste into freshwater systems. Simultaneously, saltwater intrusion from rising seas ruins fertile coastal soil.</p>
+                                <p class="effects-card-keydetail"><strong>Key Detail:</strong> Nearly 80% of global wastewater is discharged back into the environment without treatment, a problem exacerbated by climate-driven floods.</p>
+                            </div>
+                        </span>
+                    </span>
+                </label>
+            </div>
+            <div class="effects-flip">
+                <label class="effects-flip-label">
+                    <input type="checkbox" class="effects-flip-input">
+                    <span class="effects-flip-inner">
+                        <span class="effects-flip-face effects-flip-front">
+                            <span class="effects-card-num">06</span>
+                            <img class="effects-card-img" src="effects6.png" alt="Ozone layer depletion and UV exposure">
+                            <h3 class="effects-card-title">Ozone Layer Depletion &amp; UV Exposure</h3>
+                            <span class="effects-flip-hint">Click to flip</span>
+                        </span>
+                        <span class="effects-flip-face effects-flip-back">
+                            <div class="effects-card-text">
+                                <p>While the ozone layer is recovering thanks to the Montreal Protocol, climate change can delay this recovery by altering atmospheric circulation and cooling the upper stratosphere, which promotes ozone-depleting reactions.</p>
+                                <p class="effects-card-keydetail"><strong>Key Detail:</strong> A weakened ozone layer allows more UV-B radiation to reach Earth, increasing risks of skin cancer and damaging the base of the marine food web (phytoplankton).</p>
+                            </div>
+                        </span>
+                    </span>
+                </label>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="genz-action" class="genz-action">
+    <div class="genz-kicker">04.Gen Z Action</div>
+    <div class="genz-header">
+        <h2 class="genz-title">Gen Z Climate Action Plan</h2>
+        <p class="genz-lede">
+            5 realistic actions students can start now. Track your impact, share resources, and keep each other accountable.
+        </p>
+    </div>
+
+    <div class="genz-grid">
+        <div class="genz-card">
+           
+            <h3>Action 1: Audit Your Digital Footprint</h3> 
+            <img class="genz-card-icon" src="action1.jpg" alt="Digital footprint icon">
+            <ul class="genz-meta">
+                <li><strong>Activity:</strong> Audit and streamline email, cloud, and media storage</li>
+                <li><strong>Impact:</strong> Gigabytes reduced; newsletters unsubscribed</li>
+                <li><strong>Resources:</strong> Storage tools, friend groups for accountability</li>
+            </ul>
+        </div>
+
+        <div class="genz-card">
+            
+            <h3>Action 2: Practice the “Refuse” Rule</h3>
+            <img class="genz-card-icon" src="action2.jpg" alt="Refuse rule icon">
+            <ul class="genz-meta">
+                <li><strong>Activity:</strong> Use reusable items; decline excess packaging</li>
+                <li><strong>Impact:</strong> Single-use plastics kept from landfills</li>
+                <li><strong>Resources:</strong> Reusable kits, peer awareness campaigns</li>
+            </ul>
+        </div>
+
+        <div class="genz-card">
+         
+            <h3>Action 3: Advocate for Meat-Less Days</h3>   
+            <img class="genz-card-icon" src="action3.jpg" alt="Meat-less days icon">
+            <ul class="genz-meta">
+                <li><strong>Activity:</strong> Launch Meatless Monday; explore local sustainable farming</li>
+                <li><strong>Impact:</strong> Weekly meatless meals adopted by groups/households</li>
+                <li><strong>Resources:</strong> Plant-based recipes, local farmers’ markets</li>
+            </ul>
+        </div>
+
+        <div class="genz-card">
+           
+            <h3>Action 4: Maximize Sustainable Transport</h3> 
+            <img class="genz-card-icon" src="action4.jpg" alt="Sustainable transport icon">
+            <ul class="genz-meta">
+                <li><strong>Activity:</strong> Walk, bike, or share rides for short trips</li>
+                <li><strong>Impact:</strong> Distance traveled via low-carbon options</li>
+                <li><strong>Resources:</strong> Bike lanes, walking maps, carpool apps</li>
+            </ul>
+        </div>
+
+        <div class="genz-card">
+          
+            <h3>Action 5: Educate Through Creative Media</h3> 
+            <img class="genz-card-icon" src="action5.jpg" alt="Creative media icon">
+            <ul class="genz-meta">
+                <li><strong>Activity:</strong> Make art, posters, or videos to share climate solutions</li>
+                <li><strong>Impact:</strong> Reach and engagement online + offline distribution</li>
+                <li><strong>Resources:</strong> Design tools, local environmental organizations</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="genz-actions">
+        <a class="genz-btn" href="#causes">Review causes</a>
+        <a class="genz-btn genz-btn--ghost" href="#definition-section">Back to definition</a>
+    </div>
+</section>
+
+<section id="slogan" class="slogan-section" aria-label="Slogan">
+    <div class="slogan-glow" aria-hidden="true"></div>
+    <div class="slogan-inner">
+        <div class="slogan-kicker">05.Slogan</div>
+        <h2 class="slogan-title"><span class="slogan-title-accent">Digital Roots, Global Shoots</span> <span class="slogan-title-rest">— Gen Z’s Climate Manifesto</span></h2>
+        <div class="slogan-card">
+            <blockquote class="slogan-quote">
+                <p>We aren't just inheriting the climate crisis; we are the first generation with the digital architecture to dismantle it. From viral awareness to local zero-waste activism, our connectivity is the ultimate catalyst for a sustainable planet.</p>
+            </blockquote>
+            <div class="slogan-tags" role="list">
+                <span class="slogan-tag" role="listitem">#EcoEcho</span>
+                <span class="slogan-tag" role="listitem">#GenZForGreen</span>
+                <span class="slogan-tag" role="listitem">#DigitalEarthMover</span>
+                <span class="slogan-tag" role="listitem">#ClimateJusticeNow</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="group-members" class="members-section" aria-label="Group members">
+    <div class="members-inner">
+        <div class="members-kicker">06.Members</div>
+        <h2 class="members-title">Group Members</h2>
+        <p class="members-lead">Meet the team behind this climate action project.</p>
+        <div class="members-grid">
+            <article class="member-card">
+                <img class="member-photo" src="member1.jpg" alt="Group member 1">
+                <h3 class="member-name">Jerome P. Renta</h3>
+                <p class="member-meta">Leader</p>
+            </article>
+            <article class="member-card">
+                <img class="member-photo" src="member2.jpg" alt="Group member 2">
+                <h3 class="member-name">Aldrin A. Teope</h3>
+                <p class="member-meta">Member</p>
+            </article>
+            <article class="member-card">
+                <img class="member-photo" src="member3.jpg" alt="Group member 3">
+                <h3 class="member-name">Princess Myles C. Villareal</h3>
+                <p class="member-meta">Member</p>
+            </article>
+            <article class="member-card">
+                <img class="member-photo" src="member4.jpg" alt="Group member 4">
+                <h3 class="member-name">Genalyn T. Barte</h3>
+                <p class="member-meta">Member</p>
+            </article>
+            <article class="member-card">
+                <img class="member-photo" src="member5.jpg" alt="Group member 5">
+                <h3 class="member-name">Princess Mae A. Banog</h3>
+                <p class="member-meta">Member</p>
+            </article>
+           
+        </div>
+    </div>
+</section>
+
+<section id="references" class="references-section" aria-label="References">
+    <div class="references-inner">
+        <div class="references-kicker">07.References</div>
+        <h2 class="references-title">References</h2>
+        <ol class="references-list">
+            <li class="references-item">Intergovernmental Panel on Climate Change. (2021). Frequently asked questions. <a href="https://www.ipcc.ch/help/frequently-asked-questions/" target="_blank" rel="noopener noreferrer">https://www.ipcc.ch/help/frequently-asked-questions/</a></li>
+            <li class="references-item">Encyclopaedia Britannica. (2026). Global warming. <a href="https://www.britannica.com/science/global-warming" target="_blank" rel="noopener noreferrer">https://www.britannica.com/science/global-warming</a></li>
+            <li class="references-item">O’Brien, K. L., &amp; Leichenko, R. M. (2000). Double exposure: Assessing the impacts of climate change within the context of economic globalization. <em>Global Environmental Change</em>, 10(3), 221–232. <a href="https://doi.org/10.1016/S0959-3780(00)00021-2" target="_blank" rel="noopener noreferrer">https://doi.org/10.1016/S0959-3780(00)00021-2</a></li>
+            <li class="references-item">Kweku, D. W., Bismark, O., Maxwell, A., Desmond, K. A., Danso, K. B., Oti-Mensah, E. A., … &amp; Adormaa, B. B. (2018). Greenhouse effect: greenhouse gases and their impact on global warming. <em>Journal of Scientific Research and Reports</em>, 17(6), 1–9. <a href="https://www.researchgate.net/publication/323223192_Greenhouse_Effect_Greenhouse_Gases_and_Their_Impact_on_Global_Warming" target="_blank" rel="noopener noreferrer">https://www.researchgate.net/publication/323223192_Greenhouse_Effect_Greenhouse_Gases_and_Their_Impact_on_Global_Warming</a></li>
+            <li class="references-item">Cardinale, B. J., Duffy, J. E., Gonzalez, A., Hooper, D. U., Perrings, C., Venail, P., … &amp; Naeem, S. (2012). Biodiversity loss and its impact on humanity. <em>Nature</em>, 486(7401), 59–67. <a href="https://www.nature.com/articles/nature11148#citeas" target="_blank" rel="noopener noreferrer">https://www.nature.com/articles/nature11148#citeas</a></li>
+            <li class="references-item">Pinkerton, K. E., &amp; Joad, J. P. (2006). Influence of air pollution on respiratory health during perinatal development. <em>Clinical and Experimental Pharmacology and Physiology</em>, 33(3), 269–272. <a href="https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1440-1681.2006.04357.x" target="_blank" rel="noopener noreferrer">https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1440-1681.2006.04357.x</a></li>
+            <li class="references-item">Schmale, O., Greinert, J., &amp; Rehder, G. (2005). Methane emission from high-intensity marine gas seeps in the Black Sea into the atmosphere. <em>Geophysical Research Letters</em>, 32(7). <a href="https://doi.org/10.1029/2004GL021138" target="_blank" rel="noopener noreferrer">https://doi.org/10.1029/2004GL021138</a></li>
+            <li class="references-item">Govil, P. K., &amp; Krishna, A. K. (2018). Soil and water contamination by potentially hazardous elements: a case history from India. In <em>Environmental geochemistry</em> (pp. 567–597). Elsevier. <a href="https://www.sciencedirect.com/science/article/pii/B9780444637635000239" target="_blank" rel="noopener noreferrer">https://www.sciencedirect.com/science/article/pii/B9780444637635000239</a></li>
+            <li class="references-item">Umar, S. A., &amp; Tasduq, S. A. (2022). Ozone layer depletion and emerging public health concerns—an update on epidemiological perspective of the ambivalent effects of ultraviolet radiation exposure. <em>Frontiers in Oncology</em>, 12, 866733. <a href="https://doi.org/10.3389/fonc.2022.866733" target="_blank" rel="noopener noreferrer">https://doi.org/10.3389/fonc.2022.866733</a></li>
+            <li class="references-item">Sommer, A. (2016). Burning fossil fuels: impact of climate change on health. <em>International Journal of Health Services</em>, 46(1), 48–52. <a href="https://journals.sagepub.com/doi/abs/10.1177/0020731415625253" target="_blank" rel="noopener noreferrer">https://journals.sagepub.com/doi/abs/10.1177/0020731415625253</a></li>
+            <li class="references-item">Moran, E. F., &amp; Brondizio, E. S. (1998). Land-use change after deforestation. In <em>People and pixels: Linking remote sensing and social science</em> (p. 94). National Research Council, Committee on the Human Dimensions of Global Change. <a href="https://nap.nationalacademies.org/catalog/5963/people-and-pixels-linking-remote-sensing-and-social-science" target="_blank" rel="noopener noreferrer">People and Pixels: Linking Remote Sensing and Social Science</a> (National Academies Press).</li>
+            <li class="references-item">Niñerola, A., Ferrer-Rullan, R., &amp; Vidal-Suñé, A. (2020). Climate change mitigation: Application of management production philosophies for energy saving in industrial processes. <em>Sustainability</em>, 12(2), 717. <a href="https://doi.org/10.3390/su12020717" target="_blank" rel="noopener noreferrer">https://doi.org/10.3390/su12020717</a></li>
+            <li class="references-item">Grossi, G., Goglio, P., Vitali, A., &amp; Williams, A. G. (2019). Livestock and climate change: impact of livestock on climate and mitigation strategies. <em>Animal Frontiers</em>, 9(1), 69–76. <a href="https://doi.org/10.1093/af/vfy034" target="_blank" rel="noopener noreferrer">https://doi.org/10.1093/af/vfy034</a></li>
+            <li class="references-item">Sharma, B., Vaish, B., Srivastava, V., Singh, S., Singh, P., &amp; Singh, R. P. (2017). An insight to atmospheric pollution—improper waste management and climate change nexus. In <em>Modern age environmental problems and their remediation</em> (pp. 23–47). Cham: Springer International Publishing. <a href="https://link.springer.com/book/10.1007/978-3-319-52138-7" target="_blank" rel="noopener noreferrer">https://link.springer.com/book/10.1007/978-3-319-52138-7</a></li>
+            <li class="references-item">Campbell, N. J., &amp; McCulloch, A. (1998). The climate change implications of manufacturing refrigerants: a calculation of ‘production’ energy contents of some common refrigerants. <em>Process Safety and Environmental Protection</em>, 76(3), 239–244. <a href="https://www.sciencedirect.com/science/article/pii/S0957582098707475" target="_blank" rel="noopener noreferrer">https://www.sciencedirect.com/science/article/pii/S0957582098707475</a></li>
+        </ol>
+        <h1>All research and data presented on this platform are scientifically anchored in the following Sustainable Development Goals (SDGs):
+            SDG 13, SDG 15, SDG 3, SDG 13, SDG 6, SDG 14, SDG 9, SDG 12, & SDG 17</h1>
+    </div>
+</section>
+
+<section class="science-close" aria-label="Closing message">
+    <div class="science-close-inner">
+        <p class="science-close-text">By grounding our digital advocacy in peer-reviewed science, we transform &apos;viral&apos; content into verifiable change. We are not just sharing opinions; we are deploying the evidence needed to meet the 2030 Global Agenda.</p>
+        <p class="science-close-tags">#1DA_Group3_ClimateChange.html #BSED_1DA #GenZForGreen</p>
+    </div>
+</section>
+</body>
+</html>
